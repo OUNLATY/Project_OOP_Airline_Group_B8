@@ -10,7 +10,6 @@ export class Passenger extends Person {
     private  email:string,
     private phoneNumber:string,
     private address:string
-    // private BoardingPass: BoardingPass 
     ) {
         super(name, gender, dateOfBirth, nationality);
     }
@@ -26,6 +25,7 @@ export class Passenger extends Person {
     getAddress():string{
         return this.address;
     }
+
     getContacts():string{
         return `Email: ${this.getEmail()}, Phone Number: ${this.getPhoneNumber()}, Address: ${this.getAddress()}`;
     }
