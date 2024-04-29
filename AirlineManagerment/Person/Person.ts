@@ -23,6 +23,7 @@ export abstract class Person {
     getDob(): String {
         return this.dateOfBirth;
     }
+    
     // Getter for nationality
     getNationality(): string {
         return this.nationality;
