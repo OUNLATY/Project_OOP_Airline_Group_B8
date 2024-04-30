@@ -1,6 +1,6 @@
 //TODO:
 
-class Flight {
+export class Flight {
     private flightNumber: number;
     private departureDate: Date;
     private arrivalTime: Date;
@@ -51,3 +51,4 @@ class Flight {
         return this.park;
     }
 }
+
