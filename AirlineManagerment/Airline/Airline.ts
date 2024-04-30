@@ -1,5 +1,5 @@
 //TODO:
-import {Flight} from "../Flight/Flight.js";
+import {Flight} from '../Flight/Flight.js'
 
 
 export class Airline {
