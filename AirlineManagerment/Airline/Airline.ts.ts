@@ -1,4 +1,4 @@
-class Airline{
+export class Airline{
     private name: string;
     private location: string;
     private airlineCode: string;
