@@ -1,23 +1,29 @@
 //TODO:
 
+import { Passenger } from "../Person/Passenger";
+
+ 
+
 export class Flight {
     private flightNumber: number;
     private departureDate: Date;
     private arrivalTime: Date;
-    private departureLocation: string;
     private departureAirport: string;
+    private departureLocation: string;
     private destinationAirport: string;
     private landingLocation: string;
     private park: string;
-    constructor(flightNumber: number, departureDate: Date, arrivalTime:Date,departureLocation:string, departureAirport:string, landingLocation:string, park:string) {
+    private passengers: Passenger[]=[] ;
+    constructor(flightNumber: number, departureDate: Date, arrivalTime:Date,departureLocation:string, departureAirport:string,destinationAirport: string, landingLocation:string, park:string,passenger:Passenger) {
         this.flightNumber = flightNumber;
         this.departureDate = departureDate;
         this.arrivalTime = arrivalTime;
-        this.departureLocation = departureLocation;
         this.departureAirport = departureAirport;
-        this.destinationAirport = landingLocation;
+        this.departureLocation = departureLocation;
+        this.destinationAirport = destinationAirport;
         this.landingLocation = landingLocation;
         this.park = park;
+        this.passengers;
     }
 
     getFlightName(): string {
@@ -49,6 +55,16 @@ export class Flight {
 
     getPark(): string {
         return this.park;
+    }
+
+    addPassenger(passenger:Passenger):void {
+        this.passengers.push(passenger);
+    }
+    getPassengers(): Passenger[] {
+        return this.passengers;
+    }
+    getPassengersWithReturnTickets(): Passenger[] {
+        return this.passengers.filter(passenger => passenger.hasReturnTicket());
     }
 }
 
