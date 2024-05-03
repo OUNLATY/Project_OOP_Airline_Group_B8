@@ -3,6 +3,7 @@ import { Gender } from "./AirlineManagerment/Person/Gender";
 import {Passenger} from "./AirlineManagerment/Person/Passenger";
 import {Employee} from "./AirlineManagerment/Employee/Employee";
 import {Pilot} from "./AirlineManagerment/Employee/Pilot";
+import {FlightAttendant} from "./AirlineManagerment/Employee/FlightAttendant";
 import {Department} from "./AirlineManagerment/Department/Department";
 import { Airline } from "./AirlineManagerment/Airline/Airline.ts";
 
