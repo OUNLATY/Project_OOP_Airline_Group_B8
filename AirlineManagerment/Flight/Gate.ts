@@ -1,12 +1,16 @@
 
-class Gate{
-    gateId:string;
+export class Gate{
+    private gateId:number;
+    private status:string;
+    private location:string;
 
-    constructor(gateId:string){
+    constructor(gateId:number, status:string, location:string){
         this.gateId = gateId;
+        this.status = status;
+        this.location = location;
     }
 
-    public getGateId():string{
+    public getGateId():number{
         return this.gateId;
     }
 }
