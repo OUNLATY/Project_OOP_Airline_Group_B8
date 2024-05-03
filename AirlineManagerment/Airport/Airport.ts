@@ -19,20 +19,4 @@ export class Airport {
         
     }
 
-    getAirportName() {
-        return this.name;
-    }
-    getAirportCode() {
-        return this.codeAirport;
-    }
-    getAirportLocation() {
-        return this.location;
-    }
-    getAirportCountry() {
-        return this.country;
-    }
-
-    
-
-    
 }

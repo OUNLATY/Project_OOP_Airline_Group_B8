@@ -1,8 +1,10 @@
 import {Department} from "../Department/Department";
 import {Person} from "../Person/Person";
 import { Gender } from "../Person/Gender";
+import { Pilot } from "./Pilot";
 
 export abstract class Employee extends Person {
+
     constructor(
         name:string,
         gender:Gender,
@@ -13,8 +15,10 @@ export abstract class Employee extends Person {
         private department:Department,
         
     ){
-        super(name,gender,dateOfBirth,nationality)
+        super(name,gender,dateOfBirth,nationality);
+        
     }
+   
 
     getPhoneNumber():string {
         return this.phoneNumber;

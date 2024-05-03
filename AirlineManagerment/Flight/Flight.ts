@@ -1,53 +1,61 @@
 //TODO:
 
-class Flight {
+import { Crew } from "../Employee/Crew";
+import { FlightAttendant } from "../Employee/FlightAttendant";
+import { Pilot } from "../Employee/Pilot";
+import { Passenger } from "../Person/Passenger";
+
+ 
+
+export class Flight {
     private flightNumber: number;
     private departureDate: Date;
     private arrivalTime: Date;
-    private departureLocation: string;
     private departureAirport: string;
+    private departureLocation: string;
     private destinationAirport: string;
     private landingLocation: string;
     private park: string;
-    constructor(flightNumber: number, departureDate: Date, arrivalTime:Date,departureLocation:string, departureAirport:string, landingLocation:string, park:string) {
+    private passengers: Passenger[] ;
+    private pilots:Pilot[];
+    private flightAttendant:FlightAttendant[];
+    private crew:Crew[];
+
+    constructor(flightNumber: number,
+        departureDate: Date, 
+        arrivalTime:Date,departureLocation:string, 
+        departureAirport:string,destinationAirport: string, 
+        landingLocation:string, 
+        park:string,
+        passenger:Passenger[],
+        pilot:Pilot[],
+        flightAttendant:FlightAttendant[],
+        crew:Crew[]) {
+
         this.flightNumber = flightNumber;
         this.departureDate = departureDate;
         this.arrivalTime = arrivalTime;
-        this.departureLocation = departureLocation;
         this.departureAirport = departureAirport;
-        this.destinationAirport = landingLocation;
+        this.departureLocation = departureLocation;
+        this.destinationAirport = destinationAirport;
         this.landingLocation = landingLocation;
         this.park = park;
+        this.passengers= passenger|| [];
+        this.pilots= pilot || [];
+        this.flightAttendant= flightAttendant || [];
+        this.crew= crew || [];
+
+        
     }
 
-    getFlightName(): string {
-        return this.flightNumber.toString();
+    addPassenger(passenger:Passenger):void {
+        this.passengers.push(passenger);
     }
-    getDepartureDate(): Date {
-        return this.departureDate;
+    getPassengers(): Passenger[] {
+        return this.passengers;
     }
-
-    getArrivalTime(): Date {
-        return this.arrivalTime;
-    }
-
-    getDepartureLocation(): string {
-        return this.departureLocation;
-    }
-
-    getDepartureAirport(): string {
-        return this.departureAirport;
-    }
-
-    getDestinationAirport(): string {
-        return this.destinationAirport;
-    }
-
-    getLandingLocation(): string {
-        return this.landingLocation;
-    }
-
-    getPark(): string {
-        return this.park;
+    getPassengersWithReturnTickets(): Passenger[] {
+        return this.passengers.filter(passenger => passenger.hasReturnTicket());
     }
 }
+
