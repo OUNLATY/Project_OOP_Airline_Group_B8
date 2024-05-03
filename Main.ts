@@ -14,7 +14,9 @@ import { Flight } from "./AirlineManagerment/Flight/Flight";
 import { Ticket } from "./AirlineManagerment/Ticket/Ticket";
 import { MealPreference } from "./AirlineManagerment/Flight/MealPreference ";
 import {Booking} from "./AirlineManagerment/Booking/Booking";
-// import { BoardingPass } from "./AirlineManagerment/BoardingPass/BoardingPass";
+import { Gate } from "./AirlineManagerment/Flight/Gate";
+import { BoardingPass } from "./AirlineManagerment/BoardingPass/BoardingPass";
+import { Seat } from "./AirlineManagerment/Flight/Seat";
 
 
 let airline1 = new Airline("airline1","Cambodia","PP-PNC")
@@ -43,25 +45,41 @@ const flightAttendant2 = new FlightAttendant("Emily Wilson", Gender.MALE, "1995-
 const crew1 = new Crew("David Wilson", Gender.MALE, "1978-11-30", "Irish", "3334445555", "david@example.com", department1, 58000);
 const crew2 = new Crew("Olivia Smith", Gender.FEMALE, "1998-09-20", "American", "2223334444", "olivia@example.com", department2, 63000);
 
-// For Flight
+// create For Flight
 const flight1 = new Flight(1, new Date('2024-04-28T08:00:00'), new Date('2024-05-02T10:00:00'), 'Phnom Penh', 'Pochentong', 'Siem Reap', 'Phnom Penh', 'Park: Angkor Wat',[passenger1],[pilot1],[flightAttendant1],[crew1]);
 const flight2 = new Flight(2, new Date('2024-04-28T10:00:00'), new Date('2024-05-05T12:00:00'), 'phnom Penh', 'Airport PNC', 'Siem Reap', 'phnom Penh', 'Park: Angkor Wat',[passenger2],[pilot2],[flightAttendant2],[crew2]);
-// console.log(flight1);
-
 
 // create Baggage
 const Baggage1 = new Baggage("Smaller")
 const Baggage2 = new Baggage("Bigger")
 
+// create for gate
+const gate1 = new Gate("B007","open","ground floor")
+const gate2 = new Gate("A005","open","first floor")
 
-const booking1= new Booking(1, 100,flight1,Baggage1);
-const booking2 = new Booking(2,100,flight2,Baggage2);
-booking1.getFlight(flight1)
-booking2.getFlight(flight2)
-booking1.getBag(Baggage1)
-booking2.getBag(Baggage2)
+// create for seat
+const seat1= new Seat("B17","Business")
+const seat2= new Seat("B12","Business")
+
+
+//create for BoardingPass
+const boarding_pass1= new BoardingPass([flight1],[passenger1],[gate1],[seat1])
+const boarding_pass2= new BoardingPass([flight2],[passenger2],[gate2],[seat2])
+
+const booking1= new Booking(1, 100,boarding_pass1,Baggage1);
+const booking2 = new Booking(2,100,boarding_pass2,Baggage2);
+booking1.addBoardingPass(boarding_pass1)
+booking2.addBoardingPass(boarding_pass2)
+booking1.addBag(Baggage1)
+booking2.addBag(Baggage2)
 console.log(booking1);
-// console.log(booking2);
+// console.log(boarding_pass1);
+
+
+
+
+
+
 
 
 

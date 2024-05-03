@@ -1,11 +1,11 @@
 export class Seat{
-    private seatNumber: number;
+    private seatNumber: string;
+    private seatType:string;
 
-    constructor(seatNumber: number) {
+    constructor(seatNumber: string,seatType: string) {
         this.seatNumber = seatNumber;
+        this.seatType= seatType;
     }
 
-    public getSeatNumber(): number {
-        return this.seatNumber;
-    }
+    
 }

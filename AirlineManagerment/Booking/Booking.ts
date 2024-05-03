@@ -1,23 +1,24 @@
 
 import { Flight } from "../Flight/Flight";
 import {Baggage } from "../Baggage/Baggage";
+import { BoardingPass } from "../BoardingPass/BoardingPass";
 
 export class Booking {
     private bookingNumber: number;
     private price: number;
-    private flights: Flight[];  // Changed to array of flights
+    private boarding_pass: BoardingPass[];  // Changed to array of boarding_pass
     private Bag: Baggage[]; // Changed to array
-    constructor(bookingNumber: number, price: number, flight: Flight,Bag: Baggage) {
+    constructor(bookingNumber: number, price: number, boarding_pass: BoardingPass,Bag: Baggage) {
         this.bookingNumber = bookingNumber;
         this.price = price;
-        this.flights= [];
+        this.boarding_pass= [];
         this.Bag = []  ;// Updated
     }
-    getFlight(flight:Flight): void{
-        this.flights.push(flight);
+    addBoardingPass(BoardingPass:BoardingPass): void{
+        this.boarding_pass.push(BoardingPass);
     }
 
-    getBag(bag:Baggage): void{
+    addBag(bag:Baggage): void{
         this.Bag.push(bag)
     }
 
