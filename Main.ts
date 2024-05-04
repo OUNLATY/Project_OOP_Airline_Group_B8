@@ -139,5 +139,5 @@ const allFlights = airlineManager.getAllFlights(airline);
 const allBookings = airlineManager.getAllBookings(airline);
 
 // console.log(airline);
-// console.log(passenger1);
+console.log(passenger1);
 
