@@ -1,12 +1,11 @@
-
-class Gate{
-    gateId:string;
-
-    constructor(gateId:string){
-        this.gateId = gateId;
+export class Gate {
+    private gateNumber: string;
+    constructor(gateNumber: string) {
+      this.gateNumber = gateNumber;
     }
-
-    public getGateId():string{
-        return this.gateId;
+  
+    getGateNumber(): string {
+      return this.gateNumber;
     }
-}
+ 
+  }
