@@ -21,7 +21,13 @@ export class GateAgent extends Employee {
     private airline: Airline,
     gate: Gate 
   ) {
-    super(name, gender, dateOfBirth, nationality, phoneNumber, email);
+    super(
+      name, 
+      gender, 
+      dateOfBirth,
+      nationality, 
+      phoneNumber, 
+      email);
     this.gate = gate;
   }
 
